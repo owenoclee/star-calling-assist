@@ -5,6 +5,7 @@ import com.google.inject.Injector;
 import com.starcallingassist.StarCallingAssistConfig;
 import com.starcallingassist.constants.PluginColors;
 import com.starcallingassist.enums.Region;
+import com.starcallingassist.events.RouteViaShortestPathRequested;
 import com.starcallingassist.events.ShowWorldPointOnWorldMapRequested;
 import com.starcallingassist.events.WorldHopRequest;
 import com.starcallingassist.modules.sidepanel.decorators.HeaderPanelDecorator;
@@ -171,6 +172,12 @@ public class SidePanel extends PluginPanel implements Activatable
 			public void onShowWorldPointOnWorldMapRequested(ShowWorldPointOnWorldMapRequested showWorldPointOnWorldMapRequested)
 			{
 				decorator.onShowWorldPointOnWorldMapRequested(showWorldPointOnWorldMapRequested);
+			}
+
+			@Override
+			public void onRouteViaShortestPathRequested(RouteViaShortestPathRequested routeViaShortestPathRequested)
+			{
+				decorator.onRouteViaShortestPathRequested(routeViaShortestPathRequested);
 			}
 		});
 
